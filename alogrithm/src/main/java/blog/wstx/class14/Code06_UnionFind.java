@@ -48,11 +48,11 @@ public class Code06_UnionFind {
                 if(xSize > ySize){
                     father[yFather] = xFather;
                     size[xFather] = xSize + ySize;
-                    size[yFather] = 1;
+                    size[yFather] = 0;
                 }else{
                     father[xFather] = yFather;
                     size[yFather] = xSize + ySize;
-                    size[xFather] = 1;
+                    size[xFather] = 0;
                 }
             }
         }
@@ -60,7 +60,7 @@ public class Code06_UnionFind {
         public static int size(){
             int count = 0;
             for (int i = 0; i < size.length; i++) {
-                if(size[i] != 1) count++;
+                if(size[i] != 0) count++;
             }
             return count;
         }
