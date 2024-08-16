@@ -1,6 +1,7 @@
 package blog.wstx.class17;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -87,6 +88,36 @@ public class Code03_PrintAllPermutations {
             }
         }
     }
+
+    public static List<String> permutationNoRepeat(String s) {
+        List<String> ans = new ArrayList<>();
+        if (s == null || s.length() == 0) {
+            return ans;
+        }
+        HashSet<String> set = new HashSet<>();
+        char[] str = s.toCharArray();
+        process4(str, 0, set);
+        for (String string : set) {
+            ans.add(string);
+        }
+        return ans;
+    }
+    public static void process4(char[] str,int i,HashSet<String> set){
+        if(i == str.length){
+            set.add(String.valueOf(str));
+        }else{
+            boolean[] visited = new boolean[256];
+            for (int j = i; j < str.length; j++) {
+                if(!visited[j]){
+                    visited[str[i]] = true;
+                    swap(str,i,j);
+                    process4(str,i+1,set);
+                    swap(str,i,j);// 恢复现场
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         String s = "acc";
         List<String> ans1 = permutation1(s);
@@ -101,6 +132,11 @@ public class Code03_PrintAllPermutations {
         System.out.println("=======");
         List<String> ans3 = permutation3(s);
         for (String str : ans3) {
+            System.out.println(str);
+        }
+        System.out.println("=======");
+        List<String> ans4 = permutationNoRepeat(s);
+        for (String str : ans4) {
             System.out.println(str);
         }
 
