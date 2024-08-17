@@ -5,6 +5,7 @@ package blog.wstx.class28;
  * @version: 1.0
  * @Author: pyipXt
  * @Description: 最短回文串
+ * https://leetcode.cn/problems/shortest-palindrome/description/
  **/
 public class Code03_AddShortestStart {
     public static String shortestPalindrome(String s) {
