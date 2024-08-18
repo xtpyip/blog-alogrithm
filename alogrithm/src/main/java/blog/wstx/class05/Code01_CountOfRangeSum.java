@@ -6,7 +6,7 @@ package blog.wstx.class05;
  * @Author: pyipXt
  * @Description: 范围内的值
  **/
-// https://leetcode.com/problems/count-of-range-sum/
+// https://leetcode.cn/problems/count-of-range-sum/
 public class Code01_CountOfRangeSum {
     public static int countRangeSum(int[] nums, int lower, int upper) {
         int n = nums.length;
