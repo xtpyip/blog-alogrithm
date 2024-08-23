@@ -118,6 +118,32 @@ public class Code02_Cola {
         return m == 0 ? puts : -1;
     }
 
+    public static void main(String[] args) {
+        int testTime = 1000;
+        int zhangMax = 10;
+        int colaMax = 10;
+        int priceMax = 20;
+        System.out.println("如果错误会打印错误数据，否则就是正确");
+        System.out.println("test begin");
+        for (int i = 0; i < testTime; i++) {
+            int m = (int) (Math.random() * colaMax);
+            int a = (int) (Math.random() * zhangMax);
+            int b = (int) (Math.random() * zhangMax);
+            int c = (int) (Math.random() * zhangMax);
+            int x = ((int) (Math.random() * priceMax) + 1) * 10;
+            int ans1 = putTimes(m, a, b, c, x);
+            int ans2 = right(m, a, b, c, x);
+            if (ans1 != ans2) {
+                System.out.println("int m = " + m + ";");
+                System.out.println("int a = " + a + ";");
+                System.out.println("int b = " + b + ";");
+                System.out.println("int c = " + c + ";");
+                System.out.println("int x = " + x + ";");
+                break;
+            }
+        }
+        System.out.println("test end");
+    }
 
 
 
