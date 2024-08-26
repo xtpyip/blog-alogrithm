@@ -1,7 +1,6 @@
 package blog.dddt.class05;
 
 import blog.wstx.class12.TreeNode;
-import sun.reflect.generics.tree.Tree;
 
 /**
  * @ClassName: Code01_ConstructBinarySearchTreeFromPreorderTraversal
